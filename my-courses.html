@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View and manage all your current university courses in one place.">
+    <title>My Courses - Course Organizer</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">📚 CourseHub</a>
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="my-courses.html" class="active">My Courses</a></li>
+                <li><a href="add-course.html">Add Course</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="nav-overlay" id="nav-overlay"></div>
+    </header>
+
+    <main>
+        <h2 class="page-title">My Current Courses</h2>
+        
+        <table class="course-table">
+            <thead>
+                <tr>
+                    <th>Course Name</th>
+                    <th>Instructor</th>
+                    <th>Credit Hours</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Course">Computer Science</td>
+                    <td data-label="Instructor">Dr.Amr s Ghoinem</td>
+                    <td data-label="Credits">3</td>
+                    <td data-label="Notes">C + C++</td>
+                </tr>
+                <tr>
+                    <td data-label="Course">math_2</td>
+                    <td data-label="Instructor">Dr. Mohamed </td>
+                    <td data-label="Credits">3</td>
+                    <td data-label="Notes">Matrix</td>
+                </tr>
+                <tr>
+                    <td data-label="Course">Discrete Mathematics</td>
+                    <td data-label="Instructor">Prof.Ahmed Mohamed</td>
+                    <td data-label="Credits">3</td>
+                    <td data-label="Notes">Graph</td>
+                </tr>
+                <tr>
+                    <td data-label="Course">Statistics_2</td>
+                    <td data-label="Instructor">Ms. Eman Khaled</td>
+                    <td data-label="Credits">3</td>
+                    <td data-label="Notes">Random Varibale </td>
+                </tr>
+                <tr>
+                    <td data-label="Course">Internet Technology</td>
+                    <td data-label="Instructor">Dr. abdelrahman</td>
+                    <td data-label="Credits">3</td>
+                    <td data-label="Notes">This project</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Personal Course Organizer | Made by arwa 💕</p>
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+        const navOverlay = document.getElementById('nav-overlay');
+
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        hamburger.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', toggleMenu);
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navMenu.classList.contains('active')) toggleMenu();
+            });
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+    </script>
+</body>
+</html>
