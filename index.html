@@ -3,77 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal Course Organizer — plan, track, and manage your university courses with ease.">
     <title>Course Organizer - Home</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
         <nav>
-            <a href="index.html" class="logo">📚 CourseHub</a>
-            <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu" id="nav-menu">
+            <ul>
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="my-courses.html">My Courses</a></li>
                 <li><a href="add-course.html">Add Course</a></li>
                 <li><a href="contact-us.html">Contact Us</a></li>
             </ul>
         </nav>
-        <div class="nav-overlay" id="nav-overlay"></div>
     </header>
 
     <main>
         <section class="hero">
-            <div class="hero-content">
-                <h1>Welcome to Personal Course Organizer</h1>
-                <h2>Plan Smarter, Learn Better, Achieve More</h2>
-                
-                <div class="hero-text">
-                    <p>Your all-in-one platform to organize and manage your university courses efficiently.</p>
-                    <p>Track your current subjects, add new courses, and stay on top of your academic goals.</p>
-                    <p>Simple, clean, and built to support your success every step of the way.</p>
-                </div>
-            </div>
+            <h1>Welcome to Personal Course Organizer</h1>
+            <h2>Plan Smarter, Learn Better, Achieve More</h2>
+            <p>Your all-in-one platform to organize and manage your university courses efficiently.</p>
+            <p>Track your current subjects, add new courses, and stay on top of your academic goals.</p>
+            <p>Simple, clean, and built to support your success every step of the way.</p>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2026 - Personal Course Organizer | Made by arwa 💕</p>
     </footer>
-
-    <script>
-        // Hamburger Menu Toggle
-        const hamburger = document.getElementById('hamburger-btn');
-        const navMenu = document.getElementById('nav-menu');
-        const navOverlay = document.getElementById('nav-overlay');
-
-        function toggleMenu() {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            navOverlay.classList.toggle('active');
-            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-        }
-
-        hamburger.addEventListener('click', toggleMenu);
-        navOverlay.addEventListener('click', toggleMenu);
-
-        // Close menu on link click
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (navMenu.classList.contains('active')) toggleMenu();
-            });
-        });
-
-        // Close menu on resize
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
-                toggleMenu();
-            }
-        });
-    </script>
 </body>
 </html>
